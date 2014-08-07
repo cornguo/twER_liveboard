@@ -4,7 +4,7 @@ $ch = curl_init('http://www.ktgh.com.tw/BednoInfo_Show.asp?CatID=80&ModuleType=Y
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 
 $data = curl_exec($ch);
-$data = iconv('big5', 'utf-8', $data);
+$data = iconv('big5', 'utf-8//ignore', $data);
 $data = strstr($data, '急診即時資訊公告');
 
 $pattern = '/(<td style="color:#(.*);" >.*<\/td>|<td>(.*)<\/td>|.*Last Edited Time: (.*)\.)/Uum';

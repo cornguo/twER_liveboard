@@ -4,7 +4,7 @@ $ch = curl_init('http://www.sltung.com.tw/tw/BED/bed.html');
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 
 $data = curl_exec($ch);
-$data = iconv('big5', 'utf-8', $data);
+$data = iconv('big5', 'utf-8//ignore', $data);
 
 $pattern = '/>(\d\..*：|更新時間 : )([^<]*)<?\s*</Uum';
 

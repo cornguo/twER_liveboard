@@ -4,7 +4,7 @@ $ch = curl_init('http://www3.edah.org.tw/E-DA/WebRegister/ProcessEmeInf.jsp');
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 
 $data = curl_exec($ch);
-$data = iconv('big5', 'utf-8', $data);
+$data = iconv('big5', 'utf-8//ignore', $data);
 
 $pattern = '/<td>.*：(.*)<\/font>/Uum';
 
