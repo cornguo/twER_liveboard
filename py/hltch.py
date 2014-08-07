@@ -13,10 +13,10 @@ report['full_reported'] = full_reported
 report['pending_doctor'] = int( pending['WaitToDiagnosis'] )
 report['pending_bed'] = int( pending['WaitToPushBed'] )
 report['pending_ward'] = int( pending['WaitToAdm'] )
-report['pending_ICU'] = int( pending['WaitToICU'] )
+report['pending_icu'] = int( pending['WaitToICU'] )
 update_time = '{0}/{1}/{2} {3}:{4}'.format(int(pending['yy'])+1911, pending['mm'], pending['dd'], pending['h'], pending['m'] )
 report['update_time'] = datetime.strptime(update_time, '%Y/%m/%d %H:%M').strftime('%s')
-report['Hosptial_SN'] = '1145010010'
+report['Hosptial_sn'] = '1145010010'
 
 report = [report]
 print ( json.dumps(report, ensure_ascii=False) )

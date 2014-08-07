@@ -10,10 +10,10 @@ full_reported = re.findall(u'滿床：.*(.+?)</span>',html.text)
 pending = re.findall(u'人數：.*(.[0-9])</span>',html.text)
 # parse [doctor, bed, ward, ICU] like ['>1', '38', '70', '>0']
 values = [ int( ele.replace('>','') ) for ele in pending ]
-keys = ['pending_doctor','pending_bed', 'pending_ward', 'pending_ICU']
+keys = ['pending_doctor','pending_bed', 'pending_ward', 'pending_icu']
 
 report = { key:value for value, key in zip(values, keys) }
-report['Hosptial_SN'] = '1131010011'
+report['Hosptial_sn'] = '1131010011'
 report['full_reported'] = True if full_reported[0] == u'是' else False
 report['update_time'] = datetime.strptime(update_time[0], '%Y-%m-%d %H:%M').strftime('%s')
 

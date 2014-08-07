@@ -21,6 +21,6 @@ pending_ward = int( pending[2] )
 pending_ICU = int( pending[3] )
 update_time = datetime.strptime(update_time[0].strip(), '%Y/%m/%d %H:%M:%S').strftime('%s')
 # using .timestamp() if python3 else .strftime('%s')
-report = [{ "Hosptial_SN":'1434020015', "update_time":update_time, "full_reported":full_reported, "pending_doctor":pending_doctor, "pending_bed":pending_bed, "pending_ward":pending_ward, "pending_ICU":pending_ICU }];
+report = [{ "Hosptial_sn":'1434020015', "update_time":update_time, "full_reported":full_reported, "pending_doctor":pending_doctor, "pending_bed":pending_bed, "pending_ward":pending_ward, "pending_icu":pending_ICU }];
 print ( json.dumps(report, ensure_ascii=False) )
 #[{"full_reported": false, "pending_ward": 3, "update_time": 1407218898.0, "pending_doctor": 0, "pending_bed": 0, "Hosptial_SN": 1434020015, "pending_ICU": 0}]

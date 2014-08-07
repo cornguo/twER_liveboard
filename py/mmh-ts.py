@@ -11,12 +11,12 @@ pending = re.findall(u'：</td><td>(.+?)</td>',html.text)
 #parse like ['2014/8/6 上午 01:40', '否', '6', '0', '18', '0']
 
 values = [ int(ele) for ele in pending[2:] ]
-keys = ['pending_doctor','pending_bed', 'pending_ward', 'pending_ICU']
+keys = ['pending_doctor','pending_bed', 'pending_ward', 'pending_icu']
 report = { key:value for value, key in zip(values, keys) }
 
 update_time = pending[0].replace(u'上午','am') if u'上午' in pending[0] else pending[0].replace(u'下午','pm')
 
-report["Hosptial_SN"] = '1131100010'
+report["Hosptial_sn"] = '1131100010'
 report['full_reported'] = False if u'否' in pending[1] else True
 report["update_time"] = datetime.strptime(update_time, '%Y/%m/%d %p %I:%M').strftime('%s')
 
