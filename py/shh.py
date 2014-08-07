@@ -1,7 +1,8 @@
 #!/usr/bin/env python
 #coding:UTF-8
-import requests, re, json
+import requests, re, json, os
 from datetime import datetime
+os.environ['TZ'] = 'ROC'
 html = requests.get('http://eng.shh.org.tw/ER_WEB/ER_WEB/Default.aspx')
 html.encoding='utf8'
 

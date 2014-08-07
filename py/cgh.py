@@ -1,7 +1,8 @@
 #!/usr/bin/env python
 #coding:UTF-8
-import requests, re, json
+import requests, re, json, os
 from datetime import datetime
+os.environ['TZ'] = 'ROC'
 html = requests.get('http://med.cgh.org.tw/unit/branch/Pharmacy/ebl/RealTimeInfoHQ.html')
 html.encoding='big5'
 
@@ -18,6 +19,7 @@ update_time = update_time[0].replace(u'：',':')
 update_time = str( 1911 + int(update_time[0:3]) ) + update_time[3:]
 report["Hosptial_SN"] = '1101020018'
 report['full_reported'] = False if pending[0] ==u'否' else True
+print update_time
 report["update_time"] = datetime.strptime(update_time, '%Y/%m/%d %H:%M').strftime('%s')
 #using .timestamp() if py3 else .strftime('%s')
 

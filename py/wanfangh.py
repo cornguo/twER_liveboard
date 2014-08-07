@@ -1,7 +1,8 @@
 #!/usr/bin/env python
 #coding:UTF-8
-import requests, re, json
+import requests, re, json, os
 from datetime import datetime
+os.environ['TZ'] = 'ROC'
 html = requests.get('http://www.wanfang.gov.tw/W402008web_new/epd_query.asp')
 html.encoding='big5'
 

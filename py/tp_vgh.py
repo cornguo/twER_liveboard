@@ -1,7 +1,8 @@
 #!/usr/bin/env python
 #coding:UTF-8
-import requests, re, json
+import requests, re, json, os
 from datetime import datetime
+os.environ['TZ'] = 'ROC'
 html = requests.get('http://www6.vghtpe.gov.tw/ERREALIFO/ERREALIFO.jsp')
 html.encoding='big5'
 

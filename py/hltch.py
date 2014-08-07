@@ -1,7 +1,8 @@
 #!/usr/bin/env ptyhon
 #coding:UTF-8
-import requests, json
+import requests, json, os
 from datetime import datetime
+os.environ['TZ'] = 'ROC'
 html = requests.get('http://hlm.tzuchi.com.tw/html/HLinfo/Hlinfo.php')
 pending = json.loads(html.text)[0]
 # keys: ['m', 'WaitToPushBed', 'yy', 's', 'BedFull', 'WaitToAdm', 'WaitToDiagnosis', 'dd', 'mm', 'WaitToICU', 'h']

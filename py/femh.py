@@ -1,7 +1,8 @@
 #!/usr/bin/env python
 #coding:UTF-8
-import requests, re, json
+import requests, re, json, os
 from datetime import datetime
+os.environ['TZ'] = 'ROC'
 html = requests.get('http://www.femh.org.tw/research/news_op.aspx')
 
 update_time =re.findall(u'日期：(.*)</span>',html.text)

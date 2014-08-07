@@ -1,7 +1,8 @@
 #!/usr/bin/env python
 #coding:UTF-8
-import requests, re, json
+import requests, re, json, os
 from datetime import datetime
+os.environ['TZ'] = 'ROC'
 html = requests.get('http://www.tsmh.org.tw/~webapp/b/web_dg/er_status/er_show_db.php')
 html.encoding='big5'
 

@@ -1,9 +1,9 @@
 #!/usr/bin/env python
 #coding:UTF-8
-#
 
-import requests, re, json
+import requests, re, json, os
 from datetime import datetime
+os.environ['TZ'] = 'ROC'
 html = requests.get('http://www.pohai.org.tw/pohai/bedqty_er/bedqty_er.php')
 html.encoding='utf8'
 
