@@ -4,7 +4,7 @@ $ch = curl_init('https://www.cgmh.org.tw/bed/erd/index.asp?loc=3');
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 
 $data = curl_exec($ch);
-$data = iconv('big5', 'utf-8', $data);
+$data = iconv('big5', 'utf-8//ignore', $data);
 
 $pattern = '/(<img.*<FONT.*>|更新時間：)(.*)<\/td>/Uum';
 
