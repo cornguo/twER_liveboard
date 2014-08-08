@@ -18,7 +18,7 @@ $time = str_replace(
 $time = explode(' ', $time);
 
 $return = array(
-    'hosptial_sn'    => '1317050017',
+    'hospital_sn'    => '1317050017',
     'update_time'    => strtotime($time[0] . ' ' . $time[2] . $time[1]),
     'full_reported'  => ('是' === $match[2][1])? true:false,
     'pending_doctor' => intval($match[2][3]),

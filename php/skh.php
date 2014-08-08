@@ -11,7 +11,7 @@ $match = array();
 preg_match_all($pattern, $data, $match);
 
 $return = array(
-    'hosptial_sn'    => '1101150011',
+    'hospital_sn'    => '1101150011',
     'update_time'    => strtotime($match[1][7] . ' ' . $match[1][8]),
     'full_reported'  => ('已向119通報滿床(載)' === $match[1][0])? true:false,
     'pending_doctor' => intval($match[1][1]) + intval($match[1][5]) + intval($match[1][6]),

@@ -11,7 +11,7 @@ $match = array();
 preg_match_all($pattern, $data, $match);
 
 $return = array(
-    'hosptial_sn'    => '1141310019',
+    'hospital_sn'    => '1141310019',
     'update_time'    => strtotime($match[2][1]),
     'full_reported'  => ('未通報' === strip_tags($match[3][11]))? false:true,
     'pending_doctor' => intval($match[3][12]),

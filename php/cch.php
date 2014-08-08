@@ -19,7 +19,7 @@ $time = str_replace(
 $time = explode(' ', $time);
 
 $return = array(
-    'hosptial_sn'    => '1137010024',
+    'hospital_sn'    => '1137010024',
     'update_time'    => strtotime($time[0] . ' ' . $time[2] . $time[1]),
     'full_reported'  => ('尚未通報' === $match[2][0])? false:true,
     'pending_doctor' => intval($match[4][1]),
