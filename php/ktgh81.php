@@ -15,7 +15,7 @@ $time = $match[4][5];
 $time = intval(substr($time, 0, 3) + 1911) . substr($time, 3);
 
 $return = array(
-    'hosptial_sn'    => '1536030075',
+    'hospital_sn'    => '1536030075',
     'update_time'    => strtotime($time),
     'full_reported'  => ('e7e7e7' === $match[2][0])? false:true,
     'pending_doctor' => intval($match[3][1]),

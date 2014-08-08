@@ -12,7 +12,7 @@ $match = array();
 preg_match_all($pattern, $data, $match);
 
 $return = array(
-    'hosptial_sn'    => '0937010019',
+    'hospital_sn'    => '0937010019',
     'update_time'    => strtotime($match[2][6]),
     'full_reported'  => ('未向119通報滿床(載)' === $match[1][1])? false:true,
     'pending_doctor' => intval($match[2][2]),
