@@ -7,7 +7,7 @@ html = requests.get('http://www.wanfang.gov.tw/W402008web_new/epd_query.asp')
 html.encoding='big5'
 
 update_time = re.findall(u'日期:(.*) ，系統',html.text)
-pending = re.findall(u'：(.*)?</li>',html.text)
+pending = re.findall(u'：(.+)?</li>',html.text)
 # prase like ['否', '0 人', '0 人', '24 人 ', '0 人']
 pending =[ ele.replace(u' 人','').strip() for ele in pending ]
 values = [int(ele) for ele in pending[1:]]
