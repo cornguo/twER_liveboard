@@ -17,6 +17,5 @@ report['Hosptial_sn'] = '1131010011'
 report['full_reported'] = True if full_reported[0] == u'是' else False
 report['update_time'] = datetime.strptime(update_time[0], '%Y-%m-%d %H:%M').strftime('%s')
 
-report = [ report ]
 print ( json.dumps(report, ensure_ascii=False) )
 # [{"update_time": "1407185520", "pending_ICU": 0, "pending_bed": 37, "full_reported": true, "Hosptial_SN": "1131010011", "pending_doctor": 4, "pending_ward": 56}]

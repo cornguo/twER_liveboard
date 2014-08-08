@@ -18,7 +18,6 @@ update_time = '{0}/{1}/{2} {3}:{4}'.format(int(pending['yy'])+1911, pending['mm'
 report['update_time'] = datetime.strptime(update_time, '%Y/%m/%d %H:%M').strftime('%s')
 report['Hosptial_sn'] = '1145010010'
 
-report = [report]
 print ( json.dumps(report, ensure_ascii=False) )
 
 # [{"update_time": "1407232740", "pending_ICU": 1, "pending_bed": 0, "full_reported": true, "Hosptial_SN": "1145010010", "pending_doctor": 1, "pending_ward": 27}]

@@ -18,6 +18,5 @@ report["Hosptial_sn"] = '0501110514'
 report['full_reported'] = False if pending[0]==u'否' else True
 report["update_time"] = 'null'
 
-report = [report]
 print ( json.dumps(report, ensure_ascii=False) )
 # [{"update_time": "1407226207", "full_reported": true, "pending_bed": 16, "Hosptial_SN": "0501110514", "pending_doctor": 0, "pending_ward": 0}]

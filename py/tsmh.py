@@ -19,5 +19,4 @@ report["Hosptial_sn"] = '943030019'
 report['full_reported'] = False if u'未' in full_reported else True
 report["update_time"] = datetime.strptime(update_time, '%Y/%m/%d %H:%M').strftime('%s')
 
-report = [report]
 print ( json.dumps(report, ensure_ascii=False) )
