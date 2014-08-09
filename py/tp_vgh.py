@@ -6,16 +6,15 @@ os.environ['TZ'] = 'ROC'
 html = requests.get('http://www6.vghtpe.gov.tw/ERREALIFO/ERREALIFO.jsp')
 html.encoding='big5'
 
-pending = re.findall(u'">?(.\w)</font>',html.text)
-# prase like ['>否', '>2', '>0', '20', '>0']
+pending = re.findall(u'">?(\w+)</font>',html.text)
+full_reported = re.findall(u'體">?(.?)</font>',html.text)[0]
+# prase like ['2', '0', '20', '0']
 
-pending = [ ele.replace('>','').strip() for ele in pending ]
-values = [ int(ele) for ele in pending[1:] ]
 keys = ['pending_doctor','pending_bed', 'pending_ward', 'pending_icu']
-report = { key:value for value, key in zip(values, keys) }
+report = { key:value for value, key in zip(pending, keys) }
 
 report["Hosptial_sn"] = '0501110514'
-report['full_reported'] = False if pending[0]==u'否' else True
+report['full_reported'] = False if full_reported==u'否' else True
 report["update_time"] = 'null'
 
 print ( json.dumps(report, ensure_ascii=False) )

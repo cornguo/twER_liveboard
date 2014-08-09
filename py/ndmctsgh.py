@@ -13,7 +13,8 @@ keys = ['pending_doctor','pending_bed', 'pending_ward', 'pending_icu']
 report = { key:value for value, key in zip(values, keys) }
 
 report["Hosptial_sn"] = '1331040513'
-report['full_reported'] = False if u'未滿載' in pending[0] else True
+print pending[0]
+report['full_reported'] = False if u'否' in pending[0] else True
 report["update_time"] = 'null'
 
 print ( json.dumps(report, ensure_ascii=False) )
